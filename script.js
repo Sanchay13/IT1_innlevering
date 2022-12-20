@@ -1,84 +1,46 @@
-var svar1 = 0;
-var svar2 = 0;
-var svar3 = 0;
-var svar4 = 0;
-
-var antallBesvarelser = 0; 
+var svar = [0, 0, 0, 0, 0]
 
 function livesvar(){
     var selecteduenig = false;
     var selectedenig = false;
     
-    if(document.getElementById("uenig1").checked){
-        selecteduenig = true; 
-        answer = document.getElementById("uenig1").value;
-        document.getElementById("Svar1").innerHTML = answer;
-    }
-
-    if(document.getElementById("enig1").checked){
-        selectedenig = true;
-        answer = document.getElementById("enig1").value;
-        document.getElementById("Svar1").innerHTML = answer;
-    }
-
-    if(document.getElementById("uenig2").checked){
-        selecteduenig = true; 
-        answer = document.getElementById("uenig2").value;
-        document.getElementById("Svar2").innerHTML = answer;
-    }
-
-    if(document.getElementById("enig2").checked){
-        selectedenig = true;
-        answer = document.getElementById("enig2").value;
-        document.getElementById("Svar2").innerHTML = answer;
-    }
-
-    if(document.getElementById("uenig3").checked){
-        selecteduenig = true; 
-        answer = document.getElementById("uenig3").value;
-        document.getElementById("Svar3").innerHTML = answer;
-    }
-
-    if(document.getElementById("enig3").checked){
-        selectedenig = true;
-        answer = document.getElementById("enig3").value;
-        document.getElementById("Svar3").innerHTML = answer;
-    }
-
-    if(document.getElementById("uenig4").checked){
-        selecteduenig = true; 
-        answer = document.getElementById("uenig4").value;
-        document.getElementById("Svar4").innerHTML = answer;
-    }
-
-    if(document.getElementById("enig4").checked){
-        selectedenig = true;
-        answer = document.getElementById("enig4").value;
-        document.getElementById("Svar4").innerHTML = answer;
+    for(let i = 1; i < svar.length; i++){
+        if(document.getElementById("uenig"+i).checked){
+            selecteduenig = true; 
+            answer = document.getElementById("uenig"+i).value;
+            document.getElementById("Svar"+i).innerHTML = answer;
+        }
+    
+        if(document.getElementById("enig"+i).checked){
+            selectedenig = true;
+            answer = document.getElementById("enig"+i).value;
+            document.getElementById("Svar"+i).innerHTML = answer;
+        }
     }
 }
 
 function EndeligResultat(){
-    antallBesvarelser++;
-    console.log("Antall besvarelser:" + antallBesvarelser);
+    svar[0]++
+    console.log("Antall besvarelser:" + svar[0]);
 
     if(document.getElementById("enig1").checked){
-        svar1++;
+        svar[1]++;
     }
     if(document.getElementById("enig2").checked){
-        svar2++;
+        svar[2]++;
     }
     if(document.getElementById("enig3").checked){
-        svar3++;
+        svar[3]++;
     }
     if(document.getElementById("enig4").checked){
-        svar4++;
+        svar[4]++;
     }
+    console.log(svar);
 }
 
 function Result(){
 var xValues = ["Himmelen er grønn", "Jorden er flat", "Venus er firkantet", "Saturn er rund"];
-var yValues = [(svar1/antallBesvarelser)*100, (svar2/antallBesvarelser)*100, (svar3/antallBesvarelser)*100, (svar4/antallBesvarelser)*100];
+var yValues = [(svar[1]/svar[0])*100, (svar[2]/svar[0])*100, (svar[3]/svar[0])*100, (svar[4]/svar[0])*100];
 var barColors = ["red", "yellow","blue","orange","brown"];
 
 new Chart("myChart", {

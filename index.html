@@ -8,15 +8,19 @@
     <title>Spørreundersøkelse</title>
 </head>
 <body>
-    <div class="">
-    <br>
-    <h1>Spørreundersøkelse</h1>
-        
+        <div id="header">
+        <h1>Spørreundersøkelse</h1>
+        </div>
+
+        <br>
+
+        <div class="innhold">
         <p>Himmelen er grønn</p>
         <input type="radio" value="Uenig" name="Svaralternativ" id="uenig1" value="uenig" onclick="livesvar()">
         <label for="">Uenig</label>
         <input type="radio" value="Enig" name="Svaralternativ" id="enig1" value="true" onclick="livesvar()">
         <label for="">Enig</label>
+        
         
         <p>Jorden er flat</p>
         <input type="radio" value="Uenig" name="Svaralternativ2" id="uenig2" onclick="livesvar()">
@@ -24,11 +28,13 @@
         <input type="radio" value="Enig" name="Svaralternativ2" id="enig2" onclick="livesvar()">
         <label for="">Enig</label>
 
+
         <p>Venus er firkantet</p>
         <input type="radio" value="Uenig" name="Svaralternativ3" id="uenig3" onclick="livesvar()">
         <label for="">Uenig</label>
         <input type="radio" value="Enig" name="Svaralternativ3" id="enig3" onclick="livesvar()">
         <label for="">Enig</label>
+
 
         <p>Saturn er rund</p>
         <input type="radio" value="Uenig" name="Svaralternativ4" id="uenig4" onclick="livesvar()">
@@ -42,11 +48,9 @@
         <button id="submit" onclick="EndeligResultat()">Svar</button>
 
         <button id="Result" onclick="Result()">Vis resultat</button>
-
-        <p><input type="button" value="Refresh" onClick="refresh(this)"></p>
     </div>
 
-    <div class="">
+    <div>
         <h1>Dine svar:</h1>
 
         <h3>Himmelen er grønn</h3>
@@ -63,7 +67,7 @@
     </div>
 
     <br>
-
+    
     <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 </body>
 <script src="script.js"></script>

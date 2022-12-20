@@ -1,0 +1,34 @@
+#header{
+    background-color: #F9C5D5;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body{
+    background-color: #FEE3EC;
+    color: #000000;
+    font-size: 18px;
+    font-family: Calibri;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#header h1 {
+    text-align: center;
+    font-family: Calibri;
+    color: whitesmoke;
+}
+
+canvas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30%;
+}
+
+.innhold p{
+    font-weight: bold;
+}

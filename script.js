@@ -70,10 +70,4 @@ new Chart("myChart", {
 }
 
 
-function refresh(){
-    window.location.reload("Refresh");
-}
-
-
-
 
